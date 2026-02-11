@@ -7,7 +7,7 @@ from openai import OpenAI, responses
 import os
 from settings import *
 from functions import *
-from Lyrics import *
+from lyrics samples import *
 from openai import OpenAI
 
 IMG_PATH = ""
