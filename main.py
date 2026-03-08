@@ -9,11 +9,12 @@ from settings import *
 from functions import *
 from lyrics_samples import *
 from openai import OpenAI
+from dotenv import load_dotenv
+load_dotenv("keys.env")  
 
 IMG_PATH = ""
 
-API_KEY = "YOUR KEY"
-client = OpenAI(api_key=API_KEY)
+client = OpenAI(api_key=os.environ.get("OPENAI_API_KEY"))
 
 
 window = Tk()
@@ -131,7 +132,7 @@ def get_lyrics():
     print(genres_final)
     print(mood_final)
 
-    # img = "kitteh.jpg"
+    
     img = IMG_PATH
     base64_image = encode_image(img)
 
@@ -167,16 +168,11 @@ def get_lyrics():
 
 
 def revise_lyrics(lyrics_v1, lyrics_to_match):
-    #description_final = description_box.get("1.0", "end")
-    #genres_final = genres_selected_box.get("1.0", "end")
-    # mood_final = MOOD
-    #mood_final = mood_selected_box.get("1.0", "end")
 
     print(description_final)
     print(genres_final)
     print(mood_final)
 
-    # img = "kitteh.jpg"
     img = IMG_PATH
     base64_image = encode_image(img)
 
